@@ -1,5 +1,7 @@
 Todas las pruebas han sido realizadas desde Windows, posiblemente Linux no comparta los mismos comandos en algunos casos.
 
+Cada compose tiene su port personalizado, en caso de fallo revisar que no se está usando el port correspondiente.
+
 # Pasos principales
 
 Iniciar el docker para realizar las acciones indicadas.
