@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8084:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: migueluser
+      WORDPRESS_DB_PASSWORD: miguelpass
+      WORDPRESS_DB_NAME: migueldb
+    volumes:
+      - wordpress:/var/www/html
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: migueldb
+      MYSQL_USER: migueluser
+      MYSQL_PASSWORD: miguelpass
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  wordpress:
+  db:
